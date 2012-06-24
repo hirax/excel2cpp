@@ -50,7 +50,7 @@ def defFunc(state,book)
                     record<<'  '+name+'='+t+';'
                 end
                 if state==:display && cell.Formula!=''
-                    record << '    cout << '+'"'+getAlphabet(x) + y.to_s+' = " << '+ getAlphabet(x) + y.to_s+' << endl;'
+                    record << '    cout << '+'"'+name+' = " << '+ getAlphabet(x) + y.to_s+' << endl;'
                 end
                 x+=1
             end
