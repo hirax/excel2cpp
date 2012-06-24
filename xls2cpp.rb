@@ -45,12 +45,13 @@ def defFunc(state,book)
                     record<<'  '+name+
                     '='+cell.Value.to_s+';' if cell.Value.to_s!=''
                 end
-                if state==:calc &&cell.Formula!=''
+                if state==:calc &&cell.Formula!='' && !(/^[+-]?[0-9]*[\.]?[0-9]+$/ =~ cell.Formula)
                     t=cell.Formula.sub(/[=$]/,'')
                     record<<'  '+name+'='+t+';'
                 end
-                if state==:display && cell.Formula!=''
-                    record << '    cout << '+'"'+name+' = " << '+ getAlphabet(x) + y.to_s+' << endl;'
+                if state==:display && cell.Value.to_s!=''
+                    t=cell.Formula.sub(/[=$]/,'')
+                    record << '    cout << '+'"'+name+' = " << '+ name+' << endl;'
                 end
                 x+=1
             end

@@ -1,5 +1,6 @@
 // jun hirabayashi jun@hirax.net
 // http://www.hirax.net
+//
 
 #include <iostream>
 using namespace std;
@@ -10,6 +11,7 @@ using namespace std;
   float C1=0.;
   float D1=0.;
   float E1=0.;
+  float centerVal=0.;
   float A2=0.;
   float B2=0.;
   float C2=0.;
@@ -38,6 +40,7 @@ void init(void){
   C1=0.0;
   D1=0.0;
   E1=0.0;
+  centerVal=100.0;
   A2=0.0;
   B2=0.0;
   C2=0.0;
@@ -45,7 +48,7 @@ void init(void){
   E2=0.0;
   A3=0.0;
   B3=0.0;
-  C3=3.0;
+  C3=100.0;
   D3=0.0;
   E3=0.0;
   A4=0.0;
@@ -65,6 +68,7 @@ void calc(void){
   C2=(C1+B2+D2+C3)/4;
   D2=(D1+C2+E2+D3)/4;
   B3=(B2+A3+C3+B4)/4;
+  C3=centerVal;
   D3=(D2+C3+E3+D4)/4;
   B4=(B3+A4+C4+B5)/4;
   C4=(C3+B4+D4+C5)/4;
@@ -77,6 +81,7 @@ void display(void){
     cout << "C1 = " << C1 << endl;
     cout << "D1 = " << D1 << endl;
     cout << "E1 = " << E1 << endl;
+    cout << "centerVal = " << centerVal << endl;
     cout << "A2 = " << A2 << endl;
     cout << "B2 = " << B2 << endl;
     cout << "C2 = " << C2 << endl;
